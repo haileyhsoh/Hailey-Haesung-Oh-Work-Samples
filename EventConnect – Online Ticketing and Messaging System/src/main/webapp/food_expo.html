@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="shared.css">
+<title>Event Information</title>
+</head>
+<style>
+#inner-box {
+	width: calc(100% - 100px);
+	height: calc(100% - 135px);
+	background-color: #D9D9D9;
+	border-radius: 5px;
+	z-index: 0;
+	margin-top: 80px;
+	margin-left: 250px;
+	margin-right: 50px;
+	bottom: 30px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	text-align: left;
+	overflow: auto;
+}
+
+#search-area {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#search-box-container {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+#search-box {
+	margin-top: 20px;
+	width: 500px;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #C8C7C7;
+	border: none;
+	margin-right: 10px;
+}
+
+#search-button, #action-button {
+	padding: 10px 20px;
+	margin: 0 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 150px;
+}
+
+#action-button {
+	width: 50px;
+	margin-top: 20px;
+	font-size: 16px;
+}
+
+#search-by {
+	display: flex;
+	align-items: center;
+	font-family: Arial;
+}
+
+#search-by-text {
+	color: #4D4646;
+}
+
+#event-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 250px;
+	object-fit: cover;
+	object-position: top;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+#event-title {
+	margin-top: 300px;
+	color: #4D4646;
+	font-weight: bold;
+	text-align: left;
+	margin-left: 50px;
+}
+
+#event-details, #event-details-paragraph, #have-registered {
+	color: #4D4646;
+	text-align: left;
+	margin-left: 50px;
+	font-size: large;
+	margin-right: 50px;
+}
+
+#event-details-subtitle {
+	color: #4D4646;
+	text-align: left;
+	margin-left: 50px;
+	font-size: large;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+#register-button {
+	width: 180px;
+	margin-left: 50px;
+	margin-top: 30px;
+	font-size: large;
+}
+
+#qr-image {
+	width: 200px;
+	height: 200px;
+	margin: 10px;
+	margin-left: 50px;
+	margin-bottom: 50px;
+}
+
+#have-registered {
+	color: blue;
+}
+
+#location-and-time {
+	color: #4D4646;
+	font-size: large;
+	text-align: left;
+	margin-left: 50px;
+}
+</style>
+</style>
+<script src="event_info.js"></script>
+
+<body>
+	<div id="navbar">
+		<div id="nav">
+			<ul>
+				<li id="right-items">
+					<ul>
+						<li><a id="userGreeting" href="profilePage.html">Welcome</a></li>
+						<script>
+						    document.getElementById('userGreeting').textContent = 'Welcome ' + localStorage.getItem('userName');
+						</script>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!-- #nav -->
+	</div>
+	<!-- #navbar -->
+
+
+	<div id="vertical-navbar">
+		<ul>
+			<li><a href="profilePage.html">Home</a></li>
+			<li><a href="search_page.html">Search</a></li>
+			<li><a href="profilePage_events.html">My Events</a></li>
+		</ul>
+	</div>
+	<!-- #vertical-navbar -->
+
+	<div id="inner-box">
+		<img id="event-image" src="img/food_expo_image.png"
+			alt="Event Image">
+
+		<p id="event-title">Food Expo 2024</p>
+		<p id="location-and-time">Chicago, IL | 2024-08-12 10:00:00</p>
+		<p id="event-details-subtitle">Event Details:</p>
+		<p id="event-details">Explore culinary delights from famous chefs and local favorites.</p>
+
+		<p id="event-details-paragraph">Embark on a journey of endurance
+			and determination at the 2024 Marathon, set to take place in Boston,
+			MA, on April 19th, 2024, starting at 6:00 AM. Join participants from
+			across the globe in this iconic annual event, where runners test
+			their limits and push themselves to new heights of achievement.
+			Experience the thrill of crossing the finish line amidst the cheers
+			of spectators and fellow runners, creating memories that will last a
+			lifetime. Whether you're a seasoned athlete or a first-time
+			participant, the Boston Marathon offers an unparalleled opportunity
+			to challenge yourself and be part of a truly inspiring community
+			event. Lace up your running shoes and prepare for an unforgettable
+			marathon experience in the heart of historic Boston!</p>
+		<!-- <img id="qr-image" src=img/food_expo_qr.png alt="Food Expo QR Code"> -->
+
+		<p id="have-registered" style="display: none;">You have registered for this event.</p>
+		<script>
+		  document.addEventListener('DOMContentLoaded', function () {
+		    var registeredEvents = localStorage.getItem("registeredEvents");
+		    if (registeredEvents) {
+		      document.getElementById("have-registered").style.display = 'block';
+		    }
+		  });
+		</script>
+
+
+
+	</div>
+</body>
+
+</html>

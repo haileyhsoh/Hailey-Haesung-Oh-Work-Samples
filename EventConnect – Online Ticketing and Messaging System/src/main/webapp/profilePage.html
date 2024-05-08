@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profilePage.css">
+    <script src="profilePage.js"></script>
+    <title>Profile Page Personal Information</title>
+</head>
+<body>
+    <div id="navbar">
+        <div id="nav">
+            <ul>
+                <li id="right-items">
+                    <ul>
+                        <li><a id="userName" href="profilePage.html">Welcome </a></li>
+                        <script>
+						    document.getElementById('userName').textContent = 'Welcome ' + localStorage.getItem('userName');
+						</script>
+                    </ul>
+                </li>
+            </ul>
+        </div> 
+    </div> 
+
+    <div id="vertical-navbar">
+        <ul>
+            <li><a href="profilePage.html">Home</a></li>
+            <li><a href="search_page.html">Search</a></li>
+           	<li><a href="profilePage_events.html">My Events</a></li>
+        </ul>
+    </div> 
+
+    <div id="inner-box">
+    	<div id="user-name">
+    		<p id="username"> </p>
+    	</div>
+    	<div id="personal-info">
+    		<p id="fullname"> Full Name:  </p>
+    		<p id="email"> E-mail:  </p>
+    	</div>
+    </div>
+</body>
+
+</html>
