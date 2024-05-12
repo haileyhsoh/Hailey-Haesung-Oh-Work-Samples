@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="shared.css">
+<title>Event Information</title>
+</head>
+<style>
+#inner-box {
+	width: calc(100% - 100px);
+	height: calc(100% - 135px);
+	background-color: #D9D9D9;
+	border-radius: 5px;
+	z-index: 0;
+	margin-top: 80px;
+	margin-left: 250px;
+	margin-right: 50px;
+	bottom: 30px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	text-align: left;
+	overflow: auto;
+}
+
+#search-area {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#search-box-container {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+#search-box {
+	margin-top: 20px;
+	width: 500px;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #C8C7C7;
+	border: none;
+	margin-right: 10px;
+}
+
+#search-button, #action-button {
+	padding: 10px 20px;
+	margin: 0 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 150px;
+}
+
+#action-button {
+	width: 50px;
+	margin-top: 20px;
+	font-size: 16px;
+}
+
+#search-by {
+	display: flex;
+	align-items: center;
+	font-family: Arial;
+}
+
+#search-by-text {
+	color: #4D4646;
+}
+
+#event-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 250px;
+	object-fit: cover;
+	object-position: top;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+#event-title {
+	margin-top: 300px;
+	color: #4D4646;
+	font-weight: bold;
+	text-align: left;
+	margin-left: 50px;
+}
+
+#event-details, #event-details-paragraph, #have-registered {
+	color: #4D4646;
+	text-align: left;
+	margin-left: 50px;
+	font-size: large;
+	margin-right: 50px;
+}
+
+#event-details-subtitle {
+	color: #4D4646;
+	text-align: left;
+	margin-left: 50px;
+	font-size: large;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+#register-button {
+	width: 180px;
+	margin-left: 50px;
+	margin-top: 30px;
+	font-size: large;
+}
+
+#qr-image {
+	width: 200px;
+	height: 200px;
+	margin: 10px;
+	margin-left: 50px;
+	margin-bottom: 50px;
+}
+
+#have-registered {
+	color: blue;
+}
+
+#location-and-time {
+	color: #4D4646;
+	font-size: large;
+	text-align: left;
+	margin-left: 50px;
+}
+</style>
+<script src="event_info.js"></script>
+
+<body>
+	<div id="navbar">
+		<div id="nav">
+			<ul>
+				<li id="right-items">
+					<ul>
+						<li><a id="userGreeting" href="profilePage.html">Welcome</a></li>
+						<script>
+						    document.getElementById('userGreeting').textContent = 'Welcome ' + localStorage.getItem('userName');
+						</script>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!-- #nav -->
+	</div>
+	<!-- #navbar -->
+
+
+	<div id="vertical-navbar">
+		<ul>
+			<li><a href="profilePage.html">Home</a></li>
+			<li><a href="search_page.html">Search</a></li>
+			<li><a href="profilePage_events.html">My Events</a></li>
+		</ul>
+	</div>
+	<!-- #vertical-navbar -->
+
+	<div id="inner-box">
+		<img id="event-image" src="img/art_exhibition_image.png" alt="Event Image">
+
+		<p id="event-title">Art & Sculpture Exhibition</p>
+		<p id="location-and-time">Los Angeles, CA | 2024-11-05 11:00:00</p>
+		<p id="event-details-subtitle">Event Details:</p>
+		<p id="event-details">Experience breathtaking contemporary art and
+			sculptures by renowned artists.</p>
+
+		<p id="event-details-paragraph">Discover a world of creativity at
+			the Art & Sculpture Exhibition in Los Angeles, CA, on November 5,
+			2024, starting at 11:00 AM. Immerse yourself in the captivating realm
+			of contemporary art and sculptures crafted by acclaimed artists.
+			Engage with the intricate details and profound expressions embedded
+			in each masterpiece on display. Delve into the artistic process and
+			inspiration behind the works during interactive sessions with the
+			creators themselves. This event promises a journey of aesthetic
+			delight and intellectual stimulation for art enthusiasts of all ages.
+
+		</p>
+		<!-- <img id="qr-image" src=img/art_exhibition_qr.png alt="Food Expo QR Code"> -->
+
+		<p id="have-registered" style="display: none;">You have registered for this event.</p>
+		<script>
+		  document.addEventListener('DOMContentLoaded', function () {
+		    var registeredEvents = localStorage.getItem("registeredEvents");
+		    if (registeredEvents) {
+		      document.getElementById("have-registered").style.display = 'block';
+		    }
+		  });
+		</script>
+
+
+
+	</div>
+</body>
+
+</html>
