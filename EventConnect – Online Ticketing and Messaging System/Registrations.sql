@@ -1,8 +1,0 @@
-CREATE TABLE Registrations (
-    registrationID INT AUTO_INCREMENT PRIMARY KEY,
-    userID INT NOT NULL,
-    eventID INT NOT NULL,
-    registrationTime DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    FOREIGN KEY (userID) REFERENCES Users(userID),
-    FOREIGN KEY (eventID) REFERENCES Events(eventID)
-);
